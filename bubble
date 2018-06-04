@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+    int a[10]; //此数组用于存放输入数据
+    int i, j; //循环变量
+    int t; //中间变量
+    printf("input 10 numbles:\n");  //输入数据提示
+    for(i = 0; i < 10; i ++)
+        scanf("%d", &a[i]);
+    printf("\n");
+    //冒泡排序部分
+    for(j = 0; j < 9; j ++)   //进行9次循环，实现9趟比较
+        for(i = 0; i < 9 - j; i ++)  //在每一趟中进行 9 - j 次比较
+            if(a[i] > a[i + 1])
+            {
+                t = a[i];
+                a[i] = a[i + 1];
+                a[i + 1] = t;
+            }
+    printf("the sorted numbers:\n");//排序输出
+    for(i = 0; i < 10; i ++)
+        printf("%d  ", a[i]);
+    printf("\n");
+    return 0;
+}
